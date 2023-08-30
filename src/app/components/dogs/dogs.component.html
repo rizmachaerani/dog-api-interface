@@ -1,0 +1,24 @@
+<div class="justify-content-center text-center">
+    <a (click)="ngOnInit()" class="btn btn-primary m-3">Show All</a>
+    <a (click)="filterDogsAmerica()" class="btn btn-success m-3">America</a>
+    <a (click)="filterDogsAustralia()" class="btn btn-warning m-3">Australia</a>
+</div>
+
+<div class="row row-cols-4 g-3">
+    <div class="col" *ngFor="let dog of dogs">
+        <div class="card" style="width: 18rem;">
+        <div class="card" >
+            <img class="card-img-top" style="width: 100%; height: 200px;" src="https://cdn2.thedogapi.com/images/{{dog.reference_image_id}}.jpg" alt="{{dog.reference_image_id}}">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-2">{{dog.name}}</h5>
+                <p class="card-text"><b>Breed Group:</b> {{dog.breed_group}}</p>
+                <div class="text-center">
+                    <a [routerLink]="['/dogs/', dog.id]" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
